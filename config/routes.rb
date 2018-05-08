@@ -1,29 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: "users/registrations",
-    :sessions => "users/sessions"
-  }
+  devise_for :users
   root 'home#index'
-  get 'home/index'
-  
-  
-  get 'home/write' => 'home#write'
-  get 'home/post'=>'home#post'
-  get 'home/show/:post_id' => "home#show"
-  
-  #Create
-  get 'home/new' => 'home#new'
-  post 'home/create' => 'home#create'
-  
-  #Crawler
-  get 'home/crawling' => 'crawler#index'
-  
-  #Update
-  get 'home/edit/:post_id' => 'home#edit'
-  post 'home/update/:post_id' => 'home#update'
-  
-  #Delete
-  post 'home/destroy/:post_id' => 'home#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
